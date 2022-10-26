@@ -1,6 +1,7 @@
 #include <graphics.h>
 #include <task.h>
 #include <math.h>
+#include <vector>
 
 Point points[4];
 
@@ -12,11 +13,15 @@ void add_point(int i, int xp, int yp)
    points[i%4].x = xp;
    points[i%4].y = yp;
    putpixel(xp, yp, COLOR(195,60,84));
+   putpixel(xp, yp-1, COLOR(195,60,84));
+   putpixel(xp, yp+1, COLOR(195,60,84));
+   putpixel(xp+1, yp, COLOR(195,60,84));
+   putpixel(xp-1, yp, COLOR(195,60,84));
 }
 
 void curve_biz(){
    double x, y;
-   for(double i = 0.0; i<=1.0; i += 0.001)
+   for(double i = 0.0; i<=1.0; i += 0.0001)
    {
       x = pow((1-i),3)*points[0].x+3*pow((1-i),2)*i*points[1].x+3*(1-i)*pow(i,2)*points[2].x+pow(i,3)*points[3].x;
       y = pow((1-i),3)*points[0].y+3*pow((1-i),2)*i*points[1].y+3*(1-i)*pow(i,2)*points[2].y+pow(i,3)*points[3].y;
@@ -24,9 +29,16 @@ void curve_biz(){
    }
 }
 
+void lets_cut(){
+   
+}
+
 void alg_chaikin()
 {
-   
+   for(int i = 0; i<6; i++)
+   {
+      
+   }
 }
 
 void save(){

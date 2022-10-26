@@ -1,7 +1,7 @@
 # control.h task.h
 !control.cpp control.h graphics.h keys_n_colors.h task.h #<#>
 !main.cpp control.h graphics.h keys_n_colors.h task.h time.h #<#>
-!task.cpp graphics.h keys_n_colors.h math.h task.h #<#>
+!task.cpp exception graphics.h initializer_list keys_n_colors.h math.h new stddef.h task.h type_traits typeinfo utility vector #<#>
  struct@Control _type_ #<control.h>
  struct@Point _type_ #<task.h>
 HEI #<task.h>
@@ -18,6 +18,7 @@ create_control(int, int, int) -> void #<control.h>
 create_field(int i) -> void #<control.cpp>
 create_field(int) -> void #<control.h>
 curve_biz() -> void #<task.h>
+lets_cut() -> void #<task.cpp>
 main() -> int #<main.cpp>
 points : Point[] #<task.cpp>
 save() -> void #<task.h>
