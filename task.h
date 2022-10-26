@@ -10,5 +10,7 @@ struct Point{
 
 void add_point(int,int,int);
 void curve_biz();
+void alg_chaikin();
+void save();
 
 #endif
