@@ -1,0 +1,13 @@
+# control.h task.h
+!main.cpp control.h graphics.h keys_n_colors.h task.h #<#>
+!task.cpp graphics.h keys_n_colors.h math.h task.h #<#>
+ struct@Point _type_ #<task.h>
+HEI #<task.h>
+WID #<task.h>
+add_point(int i, int xp, int yp) -> void #<task.cpp>
+add_point(int, int, int) -> void #<task.h>
+curve_biz() -> void #<task.h>
+main() -> int #<main.cpp>
+points : Point[] #<task.cpp>
+	Point::x : int #<task.h>
+	Point::y : int #<task.h>
