@@ -18,7 +18,6 @@ create_control(int, int, int) -> void #<control.h>
 create_field(int i) -> void #<control.cpp>
 create_field(int) -> void #<control.h>
 curve_biz() -> void #<task.h>
-lets_cut() -> void #<task.cpp>
 main() -> int #<main.cpp>
 points : Point[] #<task.cpp>
 save() -> void #<task.h>
@@ -28,5 +27,5 @@ view() -> void #<main.cpp>
 	Control::top : int #<control.h>
 	Control::right : int #<control.h>
 	Control::bottom : int #<control.h>
-	Point::x : int #<task.h>
-	Point::y : int #<task.h>
+	Point::x : double #<task.h>
+	Point::y : double #<task.h>

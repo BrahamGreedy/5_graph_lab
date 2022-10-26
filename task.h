@@ -4,8 +4,8 @@
 #define HEI 800
 
 struct Point{
-   int x;
-   int y;
+   double x;
+   double y;
 };
 
 void add_point(int,int,int);

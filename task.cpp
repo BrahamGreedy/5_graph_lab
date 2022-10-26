@@ -29,15 +29,33 @@ void curve_biz(){
    }
 }
 
-void lets_cut(){
-   
-}
-
 void alg_chaikin()
 {
-   for(int i = 0; i<6; i++)
+   setcolor(COLOR(195,60,84));
+   int vertex = 4, size;
+   bool first = true;
+   //for(int i = 1; i<=6; i++)
+   //{
+      int N = 0;
+      Point *temp = new Point[2+vertex*1];
+      double dx, dy;
+      if(first) size = sizeof(points)/sizeof(points[0]);
+      for(int j = 0; j < size-1; j++)
+      {
+         Point p0 = points[j];
+         Point p1 = points[j+1];
+         dx = p1.x - p0.x;
+         dy = p1.y - p0.y;
+         temp[N].x = p0.x + dx*0.25;
+         temp[N].y = p0.y + dy*0.25;
+         temp[N+1].x = p0.x + dx*0.75;
+         temp[N+1].y = p0.y + dy*0.75;
+         N += 2;
+      }
+   //}
+   for(int i = 0; i < 2+vertex*i-1; i++)
    {
-      
+      line(temp[i].x, temp[i].y, temp[i+1].x, temp[i+1].y);
    }
 }
 
