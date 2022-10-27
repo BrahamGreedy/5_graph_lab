@@ -27,6 +27,7 @@ int main(){
             if(pe) break;
             x_m = mousex();
             y_m = mousey();
+            
             add_point(count_p, x_m, y_m);
             count_p++;
             delay(100);
