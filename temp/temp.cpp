@@ -36,57 +36,18 @@ void curve_biz()
 void alg_chaikin()
 {
    setcolor(COLOR(195,60,84));
-   int vertex = 4, size;
-   bool first = true;
-   Point *temp2 = new Point[2+vertex];
-   for(int i = 1; i<=6; i++)
+   int vertex = 4, lines_num = 3;
+   Point *temp, *temp2;
+   temp = new Point[vertex];
+   for(int i = 0; i<vertex; i++)
    {
-      int N = 0, k = 0;
-      Point *temp = new Point[2+vertex*i];
-      double dx, dy;
-      Point p0, p1;
-      if(first)
-      {
-         size = sizeof(points)/sizeof(points[0]);
-         for(int j = 0; j<size-1;j++)
-         {
-            p0 = points[j];
-            p1 = points[j+1];
-            dx = p1.x - p0.x;
-            dy = p1.y - p0.x;
-            temp[k].x = p0.x+dx*0.25;
-            temp[k+1].x = p0.x + dx*0.75;
-            temp[k].y = p0.y+dy*0.25;
-            temp[k+1].y = p0.y + dy*0.75;
-            k += 2;
-         }
-      }
-      else
-      {
-         size = sizeof(temp2)/sizeof(temp2[0]);
-         for(int j = 0; j<size-1;j++)
-         {
-            p0 = temp2[j];
-            p1 = temp2[j+1];
-            dx = p1.x - p0.x;
-            dy = p1.y - p0.x;
-            temp[k].x = p0.x+dx*0.25;
-            temp[k+1].x = p0.x + dx*0.75;
-            temp[k].y = p0.y+dy*0.25;
-            temp[k+1].y = p0.y + dy*0.75;
-            k += 2;
-         }
-      }
-      k = 0;
-      Point *temp2 = new Point[2+vertex*i];
-      for(int j = 0; j < 2+vertex*i; j++)
-      {
-         temp2[i].x = temp[i].x;
-         temp2[i].y = temp[i].y;
-      }
+      temp[i] = points[i];
    }
-   temp2[0] = points[0];
-   temp2[size-1] = points[3];
-   for(int i = 0; i<size-1; i++)
+   for(int i = 0; i < 6; i++)
    {
-      line(_abracadabra_cast(temp2[i]);
+      temp2 = new Point[2*lines_num];
+      for(int j = 0, k = 0; k < lines_num; j++, k++)
+      {
+         temp2[j].x = temp[k].x*0.75+temp[k+1].x*0.25;
+         ++j;
+         temp2[j].x = temp[k].x*0.25+_abracadabra_cast(temp[k+1]);
