@@ -8,6 +8,7 @@ struct Point{
    int y;
 };
 
+void current_coords(int,int);
 void add_point(int,int,int);
 void curve_biz();
 void alg_chaikin();

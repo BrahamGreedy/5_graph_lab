@@ -1,8 +1,20 @@
 #include <graphics.h>
 #include <task.h>
 #include <math.h>
+#include <string.h>
 
 Point points[4];
+
+using namespace std;
+
+void current_coords(int x, int y)
+{
+   string text;
+   text = "X:" + to_string(x) + " Y:" + to_string(y);
+   setbkcolor(COLOR(142,227,239));
+   setcolor(BLACK);
+   outtextxy(0,0, text.c_str());
+}
 
 void add_point(int i, int xp, int yp)
 {

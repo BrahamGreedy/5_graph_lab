@@ -3,7 +3,11 @@
 #include <task.h>
 #include <time.h>
 
-void view(){
+
+int main(){
+   initwindow(WID, HEI, "\\(^o^)/");
+   bool pe = false;
+   int x_m, y_m, count_p = 0, x, y;
    create_bg("bg.jpg");
    create_field(FIELD);
    create_control(PLACEMENT_END, 0, 724);
@@ -11,23 +15,20 @@ void view(){
    create_control(CHAIKIN,324,724);
    create_control(SAVE,490,724);
    create_control(EXIT,650,724);
-}
-
-int main(){
-   initwindow(WID, HEI, "\\(^o^)/");
-   bool pe = false;
-   int x_m, y_m, count_p = 0;
-   view();
    while(1)
    {
-      while(mousebuttons() != 1);
+      while(mousebuttons() != 1)
+      {
+         x = mousex();
+         y = mousey();
+         current_coords(x, y);
+      }
       switch(select_control())
       {
          case FIELD:
             if(pe) break;
             x_m = mousex();
             y_m = mousey();
-            
             add_point(count_p, x_m, y_m);
             count_p++;
             delay(100);
